@@ -1,8 +1,36 @@
 import React from "react";
-import "./Character.css";
+import styled from "styled-components";
+
+const CharacterCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0.8rem;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  border-radius: 3px;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.3)
+  );
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+  }
+
+  p {
+    font-style: italic;
+
+    span {
+      font-style: initial;
+      font-weight: 600;
+    }
+  }
+`;
 
 const Character = ({ character }) => (
-  <div className="Character">
+  <CharacterCard>
     <h2>{character.name}</h2>
     <p>
       <span>Gender:</span> {character.gender}
@@ -25,7 +53,7 @@ const Character = ({ character }) => (
     <p>
       <span>Hair color:</span> {character.hair_color}
     </p>
-  </div>
+  </CharacterCard>
 );
 
 export default Character;
