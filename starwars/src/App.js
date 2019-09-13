@@ -23,17 +23,22 @@ const App = () => {
     }
   };
 
+  const clickHandler = url => {
+    getData(url).then(data => setState(data));
+  };
+
   useEffect(() => {
     getData("https://swapi.co/api/people/").then(data => setState(data));
   }, []);
 
-  const characters = state.results || [];
+  const { results, next, previous } = state;
+  const characters = results || [];
 
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
       <StarWars characters={characters} />
-      <Buttons />
+      <Buttons next={next} previous={previous} action={clickHandler} />
     </div>
   );
 };
