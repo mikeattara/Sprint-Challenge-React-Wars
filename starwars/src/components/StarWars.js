@@ -2,9 +2,11 @@ import React from "react";
 import Character from "./Character";
 import "./StarWars.css";
 
-const StarWars = () => (
+const StarWars = ({ characters }) => (
   <div className="StarWars">
-    <Character />
+    {characters.map(character => (
+      <Character character={character} />
+    ))}
   </div>
 );
 

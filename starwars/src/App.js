@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
+import StarWars from "./components/StarWars";
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -12,28 +13,25 @@ const App = () => {
 
   const [state, setState] = useState({});
 
-  const getData = url => {
-    return axios
-      .get(url, {
-        mode: "no-cors"
-      })
-      .then(({ data }) => data);
+  const getData = async url => {
+    try {
+      const { data } = await axios.get(url);
+      return data;
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {
-    getData("https://swapi.co/api/people")
-      .then(data => {
-        setState(data);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    console.log(state);
-  });
+    getData("https://swapi.co/api/people/").then(data => setState(data));
+  }, []);
+
+  const characters = state.results || [];
 
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
+      <StarWars characters={characters} />
     </div>
   );
 };
