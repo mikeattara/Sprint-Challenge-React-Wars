@@ -1,4 +1,5 @@
 import React from "react";
+import "./Character.css";
 
 const Character = ({ character }) => (
   <div className="Character">

@@ -1,0 +1,14 @@
+.Character {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Character p {
+  font-style: italic;
+}
+
+.Character p span {
+  font-style: initial;
+  font-weight: 600;
+}
