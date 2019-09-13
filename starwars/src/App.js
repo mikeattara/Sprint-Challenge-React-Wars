@@ -3,12 +3,22 @@ import styled from "styled-components";
 import axios from "axios";
 import StarWars from "./components/StarWars";
 import Buttons from "./components/Buttons";
+import bgImg from "./sw-bg.jpg";
 
-const Header = styled.h1`
-  text-align: center;
-  color: #443e3e;
-  text-shadow: 1px 1px 5px #fff;
-  padding-bottom: 2rem;
+const AppContainer = styled.div`
+  font-family: sans-serif;
+  background: url(${bgImg}) no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 1rem 2rem;
+
+  h1 {
+    text-align: center;
+    color: #443e3e;
+    text-shadow: 1px 1px 5px #fff;
+    padding-bottom: 2rem;
+  }
 `;
 
 const App = () => {
@@ -42,11 +52,11 @@ const App = () => {
   const characters = results || [];
 
   return (
-    <>
-      <Header>React Wars</Header>
+    <AppContainer>
+      <h1>React Wars</h1>
       <StarWars characters={characters} />
       <Buttons next={next} previous={previous} action={getCharacters} />
-    </>
+    </AppContainer>
   );
 };
 
