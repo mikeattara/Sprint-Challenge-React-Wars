@@ -23,7 +23,7 @@ const App = () => {
     }
   };
 
-  const clickHandler = url => {
+  const getCharacters = url => {
     getData(url).then(data => setState(data));
   };
 
@@ -38,7 +38,7 @@ const App = () => {
     <div className="App">
       <h1 className="Header">React Wars</h1>
       <StarWars characters={characters} />
-      <Buttons next={next} previous={previous} action={clickHandler} />
+      <Buttons next={next} previous={previous} action={getCharacters} />
     </div>
   );
 };
