@@ -12,6 +12,11 @@
   );
 }
 
+.Character:hover {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+}
+
 .Character p {
   font-style: italic;
 }
