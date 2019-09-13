@@ -1,8 +1,15 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import axios from "axios";
-import "./App.css";
 import StarWars from "./components/StarWars";
 import Buttons from "./components/Buttons";
+
+const Header = styled.h1`
+  text-align: center;
+  color: #443e3e;
+  text-shadow: 1px 1px 5px #fff;
+  padding-bottom: 2rem;
+`;
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -35,11 +42,11 @@ const App = () => {
   const characters = results || [];
 
   return (
-    <div className="App">
-      <h1 className="Header">React Wars</h1>
+    <>
+      <Header>React Wars</Header>
       <StarWars characters={characters} />
       <Buttons next={next} previous={previous} action={getCharacters} />
-    </div>
+    </>
   );
 };
 
