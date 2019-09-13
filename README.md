@@ -34,11 +34,11 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Describe state.
 
-  State refers to _data_ that is liable to change over time.
+  The state object is where you store property values that belongs to the component. When the state object changes, the component re-renders.
 
 * [ ] Describe props.
 
-  Props refers to an object containing data passed to a component.
+  Props refers to an object containing data passed to a component. It is used to render components dynamically.
 
 * [ ] What are side effects, and how do you sync effects in a React component to state or prop changes?
 
