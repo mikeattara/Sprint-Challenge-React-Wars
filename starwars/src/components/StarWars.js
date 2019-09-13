@@ -5,7 +5,7 @@ import "./StarWars.css";
 const StarWars = ({ characters }) => (
   <div className="StarWars">
     {characters.map(character => (
-      <Character character={character} />
+      <Character key={character.name} character={character} />
     ))}
   </div>
 );
